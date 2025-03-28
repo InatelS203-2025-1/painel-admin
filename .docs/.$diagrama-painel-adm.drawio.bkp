@@ -1,6 +1,6 @@
 <mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/26.0.16 Chrome/132.0.6834.196 Electron/34.2.0 Safari/537.36" version="26.0.16" pages="2">
-  <diagram name="Diagrama de caso de uso" id="q5Q0HnHNC897IRmGhIEo">
-    <mxGraphModel dx="840" dy="543" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" background="none" math="0" shadow="0">
+  <diagram name="Page-1" id="q5Q0HnHNC897IRmGhIEo">
+    <mxGraphModel dx="863" dy="553" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" background="none" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -66,19 +66,19 @@
         <mxCell id="1iPAXhDrvb-g_Z3nLl4W-13" value="" style="verticalLabelPosition=bottom;verticalAlign=top;html=1;shape=mxgraph.basic.smiley;labelBackgroundColor=none;" parent="1" vertex="1">
           <mxGeometry x="133.5" y="258" width="23" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="cr2DgL153ClsetmP0AdC-1" value="Mostra informações das cartas" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+        <mxCell id="cr2DgL153ClsetmP0AdC-1" value="Informações das cartas" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="460" y="200" width="120" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="cr2DgL153ClsetmP0AdC-2" value="Mostra trocas em aberto" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+        <mxCell id="cr2DgL153ClsetmP0AdC-2" value="Trocas em aberto" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="460" y="290" width="120" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="cr2DgL153ClsetmP0AdC-3" value="Mostra i&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;nformações dos jogadores&lt;/span&gt;" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+        <mxCell id="cr2DgL153ClsetmP0AdC-3" value="Informações dos jogadores" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="460" y="110" width="120" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="cr2DgL153ClsetmP0AdC-4" value="Mostra propostas de troca" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+        <mxCell id="cr2DgL153ClsetmP0AdC-4" value="Propostas de troca" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="460" y="380" width="120" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="cr2DgL153ClsetmP0AdC-5" value="Mostra histórico de trocas" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+        <mxCell id="cr2DgL153ClsetmP0AdC-5" value="Histórico de trocas" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="460" y="470" width="120" height="70" as="geometry" />
         </mxCell>
         <mxCell id="01l0vP2sXItomz10LRTy-16" style="edgeStyle=none;shape=connector;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fontColor=default;labelBackgroundColor=default;startFill=0;startSize=8;endArrow=none;endSize=8;dashed=1;startArrow=open;" parent="1" source="1iPAXhDrvb-g_Z3nLl4W-2" target="cr2DgL153ClsetmP0AdC-3" edge="1">
@@ -129,24 +129,24 @@
       </root>
     </mxGraphModel>
   </diagram>
-  <diagram id="-CV712XTLlUQQxjlEUlC" name="Diagrama de classes">
-    <mxGraphModel dx="724" dy="468" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+  <diagram id="-CV712XTLlUQQxjlEUlC" name="Page-2">
+    <mxGraphModel dx="863" dy="553" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="NgLpLEp_pREK2nsnqpGd-26" value="&lt;div style=&quot;line-height: 150%;&quot;&gt;&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;ADM&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- token: String&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ nome: String&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ email: String&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;/div&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" parent="1" vertex="1">
-          <mxGeometry x="25" y="149" width="187" height="127" as="geometry" />
+        <mxCell id="NgLpLEp_pREK2nsnqpGd-26" value="&lt;div style=&quot;line-height: 150%;&quot;&gt;&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;ADM&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ email: String&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ password: String&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ name: String&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ register()&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ login()&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ logout()&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;/div&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="25" y="75" width="187" height="165" as="geometry" />
         </mxCell>
-        <mxCell id="Z8R0I0xb3j2OHpnb4Ci0-22" style="edgeStyle=none;shape=connector;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fontColor=default;labelBackgroundColor=default;startFill=0;startSize=8;endArrow=classic;endSize=8;endFill=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;" parent="1" edge="1">
+        <mxCell id="LS30SDS9UMMZlbYmLV7N-1" value="&lt;div style=&quot;line-height: 150%;&quot;&gt;&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;ADM panel&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- autheticateADM()&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;+ showPlayersInfo()&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ showCardsInfo()&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ showOpenTrades()&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ ShowTradeProposals()&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ ShowTradeHistory()&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;/div&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="10.5" y="322" width="216" height="165" as="geometry" />
+        </mxCell>
+        <mxCell id="Z8R0I0xb3j2OHpnb4Ci0-22" style="edgeStyle=none;shape=connector;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fontColor=default;labelBackgroundColor=default;startFill=0;startSize=8;endArrow=classic;endSize=8;endFill=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;" parent="1" source="Z8R0I0xb3j2OHpnb4Ci0-16" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="9" y="1148" />
             </Array>
             <mxPoint x="-83" y="934" as="targetPoint" />
           </mxGeometry>
-        </mxCell>
-        <mxCell id="1vm18joi6ZdQncbu0h7F-1" value="&lt;div style=&quot;line-height: 150%;&quot;&gt;&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;UI&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- autheticateADM()&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;+&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); text-align: center;&quot;&gt;Mostra&lt;/span&gt;&lt;span style=&quot;text-align: center;&quot;&gt;_&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); text-align: center;&quot;&gt;i&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); text-align: center;&quot;&gt;nformacoes&lt;/span&gt;&lt;span style=&quot;text-align: center;&quot;&gt;_&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); text-align: center;&quot;&gt;dos&lt;/span&gt;&lt;span style=&quot;text-align: center;&quot;&gt;_&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); text-align: center;&quot;&gt;jogadores()&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+&amp;nbsp;&lt;span style=&quot;text-align: center;&quot;&gt;Mostra&lt;/span&gt;&lt;span style=&quot;text-align: center;&quot;&gt;_&lt;/span&gt;&lt;span style=&quot;text-align: center;&quot;&gt;informacoes&lt;/span&gt;&lt;span style=&quot;text-align: center;&quot;&gt;_&lt;/span&gt;&lt;span style=&quot;text-align: center;&quot;&gt;das&lt;/span&gt;&lt;span style=&quot;text-align: center;&quot;&gt;_&lt;/span&gt;&lt;span style=&quot;text-align: center;&quot;&gt;cartas&lt;/span&gt;()&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+&amp;nbsp;&lt;span style=&quot;text-align: center;&quot;&gt;Mostra&lt;/span&gt;&lt;span style=&quot;text-align: center;&quot;&gt;_&lt;/span&gt;&lt;span style=&quot;text-align: center;&quot;&gt;trocas&lt;/span&gt;&lt;span style=&quot;text-align: center;&quot;&gt;_&lt;/span&gt;&lt;span style=&quot;text-align: center;&quot;&gt;em&lt;/span&gt;&lt;span style=&quot;text-align: center;&quot;&gt;_&lt;/span&gt;&lt;span style=&quot;text-align: center;&quot;&gt;aberto&lt;/span&gt;()&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+&amp;nbsp;&lt;span style=&quot;text-align: center;&quot;&gt;Mostra_propostas&lt;/span&gt;&lt;span style=&quot;text-align: center;&quot;&gt;_&lt;/span&gt;&lt;span style=&quot;text-align: center;&quot;&gt;de&lt;/span&gt;&lt;span style=&quot;text-align: center;&quot;&gt;_&lt;/span&gt;&lt;span style=&quot;text-align: center;&quot;&gt;troca&lt;/span&gt;()&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+&amp;nbsp;&lt;span style=&quot;text-align: center;&quot;&gt;Mostra_historico_de_trocas&lt;/span&gt;()&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;/div&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" vertex="1" parent="1">
-          <mxGeometry x="6.25" y="322" width="224.5" height="165" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

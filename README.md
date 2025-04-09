@@ -1,8 +1,8 @@
 <div class="flex" style="justify-content: left; align-items: center; text-align: center; gap: 12px;">
 
-![Pokéadmin Logo](.github/pokeball.png){width=64 height=64}
+<img src=".github/pokeball.png" width="64" height="64" />
 
-<h1 style="padding-bottom: 40px;">Pokéadmin</h1>
+<h1>Pokéadmin</h1>
 
 </div>
 

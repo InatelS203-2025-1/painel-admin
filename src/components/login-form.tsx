@@ -140,7 +140,7 @@ export function LoginForm() {
         </form>
       </CardContent>
       <CardFooter className="flex flex-col space-y-4 border-t border-blue-100 bg-blue-50 rounded-b-lg">
-        <p className="text-center text-sm text-blue-500">Nunca compartilhe sua senha com ninguém.</p>
+        <p className="text-center text-sm text-blue-500 pt-6">Nunca compartilhe sua senha com ninguém.</p>
       </CardFooter>
     </Card>
   )

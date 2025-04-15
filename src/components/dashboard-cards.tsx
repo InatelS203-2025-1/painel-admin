@@ -2,7 +2,8 @@
 
 import { useMemo } from "react";
 import {
-  BarChart3,
+  RefreshCcw,
+  Users,
   Flame,
   Sparkles,
   WalletCardsIcon as Cards,
@@ -190,35 +191,15 @@ export function DashboardCards({ pokemon, isLoading }: DashboardCardsProps) {
         <CardHeader className="pb-2">
           <CardDescription>Treinadores</CardDescription>
           <CardTitle className="text-2xl">
-            {userStats.totalCards} Treinadores Registrados
+            {userStats.totalCards} Treinadores 
           </CardTitle>
         </CardHeader>
         <CardContent>
           <div className="flex flex-col items-center">
-            <Cards className="mt-3 mb-3 h-12 w-12 text-blue-400" />
+            <Users className="mt-3 mb-3 h-12 w-12 text-blue-400" />
             <div className="text-center">
-              <p className="font-medium text-blue-600">
-                {userStats.uniqueCards} Treinadores
-              </p>
-              {userStats.topUserTypes.length > 0 ? (
-                <div className="mt-2">
-                  <p className="text-sm text-blue-500">Tipos mais comuns:</p>
-                  <div className="mt-1 flex flex-wrap justify-center gap-1">
-                    {userStats.topUserTypes.map((item) => (
-                      <span
-                        key={item.type}
-                        className={`inline-flex items-center rounded-full px-2 py-0.5 text-xs font-medium text-white ${getTypeColor(
-                          item.type
-                        )}`}
-                      >
-                        {translateType(item.type)} ({item.count})
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              ) : (
-                <p className="mt-2 text-sm text-blue-500"></p>
-              )}
+            <p className="text-sm text-blue-600">Treinadores Registrados:</p>
+            <p className="text-xl font-bold text-blue-700">0</p>
             </div>
           </div>
         </CardContent>
@@ -233,7 +214,7 @@ export function DashboardCards({ pokemon, isLoading }: DashboardCardsProps) {
         </CardHeader>
         <CardContent>
           <div className="flex flex-col items-center">
-            <BarChart3 className="mb-3 h-12 w-12 text-blue-400" />
+            <Cards className="mb-3 h-12 w-12 text-blue-400" />
             <div className="text-center">
               <p className="text-sm text-blue-600">Tipos mais comuns:</p>
               <div className="mt-1 flex flex-wrap justify-center gap-1">
@@ -294,11 +275,11 @@ export function DashboardCards({ pokemon, isLoading }: DashboardCardsProps) {
       <Card className="border-blue-200 shadow-md">
         <CardHeader className="pb-2">
           <CardDescription>Trocas</CardDescription>
-          <CardTitle className="text-2xl capitalize"></CardTitle>
+          <CardTitle className="text-2xl capitalize">0 Trocas</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="flex flex-col items-center">
-            <Flame className="mt-4 mb-3 h-12 w-12 text-red-400" />
+            <RefreshCcw className="mt-4 mb-3 h-12 w-12 text-blue-400" />
             <div className="text-center">
               <p className="text-sm text-blue-600">Trocas Disponiveis:</p>
               <p className="text-xl font-bold text-blue-700">0</p>

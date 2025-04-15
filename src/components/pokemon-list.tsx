@@ -161,14 +161,14 @@ export function PokemonList({ pokemon, isLoading, error, onSelectPokemon, select
                 >
                   <Edit className="h-4 w-4" />
                 </Button>
-                <Button
+                {/* <Button
                   variant="ghost"
                   size="icon"
                   onClick={() => openModal(pokemon, "delete")}
                   className="text-red-600 hover:bg-red-100"
                 >
                   <Trash2 className="h-4 w-4" />
-                </Button>
+                </Button> */}
               </div>
             </CardFooter>
           </Card>

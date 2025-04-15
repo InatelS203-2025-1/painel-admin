@@ -6,10 +6,12 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import {
   BarChart3,
+  User,
   WalletCardsIcon as Cards,
   Home,
   LogOut,
   PlusCircle,
+  RefreshCcw,
   Settings,
   Store,
   Users,
@@ -74,7 +76,7 @@ export default function DashboardLayout({
                 <SidebarMenuButton asChild>
                   <a href="/dashboard/collection">
                     <Cards className="h-5 w-5" />
-                    <span>Coleção</span>
+                    <span>Cartas</span>
                   </a>
                 </SidebarMenuButton>
               </SidebarMenuItem>
@@ -97,8 +99,8 @@ export default function DashboardLayout({
               <SidebarMenuItem>
                 <SidebarMenuButton asChild>
                   <a href="/dashboard/marketplace">
-                    <Store className="h-5 w-5" />
-                    <span>Mercado de trocas</span>
+                    <RefreshCcw className="h-5 w-5" />
+                    <span>Trocas</span>
                   </a>
                 </SidebarMenuButton>
               </SidebarMenuItem>
@@ -120,7 +122,7 @@ export default function DashboardLayout({
               </SidebarMenuItem> */}
             </SidebarMenu>
           </SidebarContent>
-          <SidebarFooter>
+          {/* <SidebarFooter>
             <SidebarMenu>
               <SidebarMenuItem>
                 <SidebarMenuButton onClick={handleLogout}>
@@ -129,18 +131,20 @@ export default function DashboardLayout({
                 </SidebarMenuButton>
               </SidebarMenuItem>
             </SidebarMenu>
-          </SidebarFooter>
+          </SidebarFooter> */}
         </Sidebar>
         <div className="flex-1 p-6">
           <div className="flex items-center justify-between mb-6">
             <h1 className="text-2xl font-bold text-blue-800">Painel Admin</h1>
-            <div className="flex items-center gap-2">
-              <SidebarTrigger />
+            <div className="flex items-center gap-2 border-blue-700">
+            <User className="mt-3 mb-3 h-5 w-5 pr-0 text-blue-700" />
+            <h1 className="text-xl font-bold text-blue-700 pr-3">Jonas</h1>
+              {/* <SidebarTrigger /> */}
               <Button
                 variant="outline"
                 size="icon"
                 onClick={handleLogout}
-                className="border-blue-300 text-blue-600 hover:bg-blue-50 hover:text-blue-700"
+                className="border-red-300 text-red-600 hover:bg-blue-50 hover:text-red-700"
               >
                 <LogOut className="h-4 w-4" />
                 <span className="sr-only">Sair</span>

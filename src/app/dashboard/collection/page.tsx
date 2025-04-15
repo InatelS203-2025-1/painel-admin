@@ -11,7 +11,7 @@ export default async function CollectionPage() {
 
   return (
     <div className="space-y-6">
-      <h1 className="text-2xl font-bold text-blue-800">Coleção</h1>
+      <h1 className="text-2xl font-bold text-blue-800">Cartas</h1>
       <UserCollection />
     </div>
   );

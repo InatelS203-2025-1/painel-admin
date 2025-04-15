@@ -69,7 +69,7 @@ export function LoginForm() {
             />
           </div>
         </div>
-        <CardTitle className="text-2xl font-bold text-center">Pokéadmin</CardTitle>
+        <CardTitle className="text-2xl font-bold text-center">Pokéadmin™</CardTitle>
         <CardDescription className="text-blue-100 text-center">
           Faça login para acessar o painel de administração
         </CardDescription>
@@ -140,7 +140,14 @@ export function LoginForm() {
         </form>
       </CardContent>
       <CardFooter className="flex flex-col space-y-4 border-t border-blue-100 bg-blue-50 rounded-b-lg">
-        <p className="text-center text-sm text-blue-500 pt-6">Nunca compartilhe sua senha com ninguém.</p>
+        <p className="text-center text-sm text-blue-500 pt-3">Nunca compartilhe sua senha com o Gengar</p>
+        <Image
+              src="/gengar_wide.png?height=128&width=128"
+              alt="Pokemon Logo"
+              width={280}
+              height={280}
+              className="object-contain"
+            />
       </CardFooter>
     </Card>
   )

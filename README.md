@@ -13,12 +13,13 @@
 Painel administrativo para gerenciamento de coleções de cartas Pokémon, desenvolvido com tecnologias modernas para oferecer uma experiência fluida e responsiva.
 
 ### Funcionalidades Principais
-- Dashboard com visão geral da coleção
-- Gerenciamento de cartas possuídas
-- Sistema de trocas entre jogadores
-- Histórico completo de transações
-- Estatísticas e métricas da coleção
-- Perfil e dados dos jogadores
+- Estatísticas e métricas das APIS utilizadas
+- Dashboard possui dados de:
+  - Jogadores
+  - Cartas dos jogadores
+  - Propostas de trocas em aberto
+  - Histórico de trocas
+  - Cartas disponiveis para troca
 
 ## 🚀 Tecnologias
 
@@ -82,7 +83,7 @@ http://localhost:3000
 - `start`: Inicia o servidor com o build de produção.
 - `lint`: Executa o linter para verificar erros de código.
 - `format`: Formata os arquivos com Prettier.
-- `test`: Executa a suíte de testes (caso tenha testes configurados).
+- `test`: Executa a suíte de testes.
 
 ---
 
@@ -128,6 +129,9 @@ pokeadmin/
 
 **Marco Renzo Rodrigues Di Toro**
 150 | GES
+
+**Vitor Torres Gonzaga**
+517 | GES
 
 ---
 

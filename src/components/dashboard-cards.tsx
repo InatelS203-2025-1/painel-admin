@@ -115,9 +115,9 @@ export function DashboardCards({ pokemon, isLoading }: DashboardCardsProps) {
 
   if (isLoading) {
     return (
-      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+      <div className="grid w-full grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
         {Array.from({ length: 4 }).map((_, i) => (
-          <Card key={i}>
+          <Card key={i} className="w-full border-blue-200 shadow-md">
             <CardHeader className="pb-2">
               <Skeleton className="h-4 w-24" />
               <Skeleton className="h-8 w-36" />
@@ -186,26 +186,28 @@ export function DashboardCards({ pokemon, isLoading }: DashboardCardsProps) {
   };
 
   return (
-    <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-      <Card className="border-blue-200 shadow-md">
+    <div className="grid w-full grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
+      
+      <Card className="w-full border-blue-200 shadow-md">
         <CardHeader className="pb-2">
           <CardDescription>Treinadores</CardDescription>
           <CardTitle className="text-2xl">
-            {userStats.totalCards} Treinadores 
+            {userStats.totalCards} Treinadores
           </CardTitle>
         </CardHeader>
         <CardContent>
           <div className="flex flex-col items-center">
             <Users className="mt-3 mb-3 h-12 w-12 text-blue-400" />
             <div className="text-center">
-            <p className="text-sm text-blue-600">Treinadores Registrados:</p>
+            <p className="text-sm text-blue-600">Treinadores Online:</p>
             <p className="text-xl font-bold text-blue-700">0</p>
             </div>
           </div>
         </CardContent>
       </Card>
 
-      <Card className="border-blue-200 shadow-md">
+
+      <Card className="w-full border-blue-200 shadow-md">
         <CardHeader className="pb-2">
           <CardDescription>Cartas Disponíveis</CardDescription>
           <CardTitle className="text-2xl">
@@ -216,63 +218,15 @@ export function DashboardCards({ pokemon, isLoading }: DashboardCardsProps) {
           <div className="flex flex-col items-center">
             <Cards className="mb-3 h-12 w-12 text-blue-400" />
             <div className="text-center">
-              <p className="text-sm text-blue-600">Tipos mais comuns:</p>
-              <div className="mt-1 flex flex-wrap justify-center gap-1">
-                {stats.topTypes.map((item) => (
-                  <span
-                    key={item.type}
-                    className={`inline-flex items-center rounded-full px-2 py-0.5 text-xs font-medium text-white ${getTypeColor(
-                      item.type
-                    )}`}
-                  >
-                    {translateType(item.type)} ({item.count})
-                  </span>
-                ))}
-              </div>
+              <p className="text-sm text-blue-600">Cartas Registradas:</p>
+              <p className="text-xl font-bold text-blue-700">0</p>
             </div>
           </div>
         </CardContent>
       </Card>
 
-      {/* <Card className="border-blue-200 shadow-md">
-        <CardHeader className="pb-2">
-          <CardDescription>Pokémon Mais Forte</CardDescription>
-          <CardTitle className="text-2xl capitalize">
-            {stats.strongestPokemon.name}
-          </CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="flex flex-col items-center">
-            <Sparkles className="mb-3 h-12 w-12 text-yellow-400" />
-            <div className="text-center">
-              <p className="text-sm text-blue-600">Soma total de stats:</p>
-              <p className="text-xl font-bold text-blue-700">
-                {stats.strongestPokemon.stats.reduce(
-                  (sum, stat) => sum + stat.base_stat,
-                  0
-                )}
-              </p>
-              <div className="mt-1 flex justify-center gap-1">
-                {stats.strongestPokemon.types.map((type) => (
-                  <span
-                    key={type.type.name}
-                    className={`rounded-full px-2 py-0.5 text-xs font-medium text-white ${getTypeColor(
-                      type.type.name
-                    )}`}
-                  >
-                    {translateType(type.type.name)}
-                  </span>
-                ))}
-              </div>
-              <p className="mt-1 text-xs text-blue-500">
-                #{stats.strongestPokemon.id.toString().padStart(3, "0")}
-              </p>
-            </div>
-          </div>
-        </CardContent>
-      </Card> */}
 
-      <Card className="border-blue-200 shadow-md">
+      <Card className="w-full border-blue-200 shadow-md">
         <CardHeader className="pb-2">
           <CardDescription>Trocas</CardDescription>
           <CardTitle className="text-2xl capitalize">0 Trocas</CardTitle>
@@ -281,7 +235,7 @@ export function DashboardCards({ pokemon, isLoading }: DashboardCardsProps) {
           <div className="flex flex-col items-center">
             <RefreshCcw className="mt-4 mb-3 h-12 w-12 text-blue-400" />
             <div className="text-center">
-              <p className="text-sm text-blue-600">Trocas Disponiveis:</p>
+              <p className="text-sm text-blue-600">Trocas Em Aberto:</p>
               <p className="text-xl font-bold text-blue-700">0</p>
               <div className="mt-1 flex justify-center gap-1"></div>
               <p className="mt-1 text-xs text-blue-500"></p>
@@ -289,6 +243,7 @@ export function DashboardCards({ pokemon, isLoading }: DashboardCardsProps) {
           </div>
         </CardContent>
       </Card>
+
     </div>
   );
 }

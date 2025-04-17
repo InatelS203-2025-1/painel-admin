@@ -2,7 +2,7 @@
 
 import type React from "react"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Search } from "lucide-react"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
@@ -19,6 +19,12 @@ export function PokemonSearch({ onSearch }: PokemonSearchProps) {
     onSearch(query)
   }
 
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const newValue = e.target.value
+    setQuery(newValue)
+    onSearch(newValue)
+  }
+
   return (
     <form onSubmit={handleSubmit} className="flex w-full max-w-sm items-center space-x-2">
       <div className="relative flex-1">
@@ -27,7 +33,7 @@ export function PokemonSearch({ onSearch }: PokemonSearchProps) {
           type="text"
           placeholder="Buscar Pokémon..."
           value={query}
-          onChange={(e) => setQuery(e.target.value)}
+          onChange={handleChange}
           className="pl-8 border-blue-200 focus-visible:ring-blue-500"
         />
       </div>

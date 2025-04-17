@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Image from "next/image"
 import { ChevronLeft, ChevronRight, Edit, Eye, Heart, Plus, Trash2 } from "lucide-react"
 import { Button } from "@/components/ui/button"
@@ -26,6 +26,11 @@ export function PokemonList({ pokemon, isLoading, error, onSelectPokemon, select
   const [modalMode, setModalMode] = useState<"view" | "edit" | "delete">("view")
   const { addCard, cards, collection } = useUserCardStore()
   const { toast } = useToast()
+
+  // Refresh pagination when list changes
+  useEffect(() => {
+    setCurrentPage(1)
+  }, [pokemon.length])
 
   const itemsPerPage = 12
   const totalPages = Math.ceil(pokemon.length / itemsPerPage)

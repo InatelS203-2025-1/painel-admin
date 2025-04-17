@@ -2,7 +2,7 @@
 
 import type React from "react";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import {
   BarChart3,
@@ -28,7 +28,7 @@ import {
   SidebarProvider,
   SidebarTrigger,
 } from "@/components/ui/sidebar";
-import { logout } from "@/lib/auth";
+import { logout, getSession } from "@/lib/auth";
 import Image from "next/image";
 
 export default function DashboardLayout({
@@ -38,6 +38,19 @@ export default function DashboardLayout({
 }>) {
   const router = useRouter();
   const [open, setOpen] = useState(true);
+  const [user, setUser] = useState({ name: "User" });
+
+  useEffect(() => {
+    async function fetchSession() {
+      const session = await getSession();
+      if (session) {
+        setUser(session);
+      } else {
+        router.push("/");
+      }
+    }
+    fetchSession();
+  }, [router]);
 
   const handleLogout = async () => {
     await logout();
@@ -138,7 +151,7 @@ export default function DashboardLayout({
             <h1 className="text-2xl font-bold text-blue-800">Painel Admin</h1>
             <div className="flex items-center gap-2 border-blue-700">
             <User className="mt-3 mb-3 h-5 w-5 pr-0 text-blue-700" />
-            <h1 className="text-xl font-bold text-blue-700 pr-3">Jonas</h1>
+            <h1 className="text-xl font-bold text-blue-700 pr-3">{user.name}</h1>
               {/* <SidebarTrigger /> */}
               <Button
                 variant="outline"

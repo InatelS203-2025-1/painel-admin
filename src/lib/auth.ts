@@ -7,15 +7,15 @@ const users = [
   {
     id: "1",
     username: "admin",
-    password: "pokemon123",
-    name: "Administrador",
+    password: "admin",
+    name: "Ademir",
     role: "admin",
   },
   {
     id: "2",
-    username: "ash",
-    password: "pikachu",
-    name: "Ash Ketchum",
+    username: "Jonas",
+    password: "admin",
+    name: "Jonas",
     role: "trainer",
   },
 ]

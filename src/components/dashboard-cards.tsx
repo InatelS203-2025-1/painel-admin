@@ -186,11 +186,10 @@ export function DashboardCards({ pokemon, isLoading }: DashboardCardsProps) {
   };
 
   return (
-    <div className="grid w-full grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
-      
+    <div className="flex w-full grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
       <Card className="w-full border-blue-200 shadow-md">
         <CardHeader className="pb-2">
-          <CardDescription>Treinadores</CardDescription>
+          <CardDescription>Treinadores Totais</CardDescription>
           <CardTitle className="text-2xl">
             {userStats.totalCards} Treinadores
           </CardTitle>
@@ -199,17 +198,16 @@ export function DashboardCards({ pokemon, isLoading }: DashboardCardsProps) {
           <div className="flex flex-col items-center">
             <Users className="mt-3 mb-3 h-12 w-12 text-blue-400" />
             <div className="text-center">
-            <p className="text-sm text-blue-600">Treinadores Online:</p>
-            <p className="text-xl font-bold text-blue-700">0</p>
+              <p className="text-sm text-blue-600">Treinadores Online:</p>
+              <p className="text-xl font-bold text-blue-700">0</p>
             </div>
           </div>
         </CardContent>
       </Card>
 
-
       <Card className="w-full border-blue-200 shadow-md">
         <CardHeader className="pb-2">
-          <CardDescription>Cartas Disponíveis</CardDescription>
+          <CardDescription>Cartas Totais</CardDescription>
           <CardTitle className="text-2xl">
             {stats.totalPokemon} Cartas
           </CardTitle>
@@ -224,7 +222,6 @@ export function DashboardCards({ pokemon, isLoading }: DashboardCardsProps) {
           </div>
         </CardContent>
       </Card>
-
 
       <Card className="w-full border-blue-200 shadow-md">
         <CardHeader className="pb-2">
@@ -243,7 +240,6 @@ export function DashboardCards({ pokemon, isLoading }: DashboardCardsProps) {
           </div>
         </CardContent>
       </Card>
-
     </div>
   );
 }

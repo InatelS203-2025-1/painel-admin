@@ -1,46 +1,50 @@
-"use client"
+"use client";
 
-import { useEffect, useState } from "react"
-import type { Pokemon } from "@/types/pokemon"
+import { useEffect, useState } from "react";
+import type { Pokemon } from "@/types/pokemon";
 
 export function usePokemon() {
-  const [pokemon, setPokemon] = useState<Pokemon[]>([])
-  const [isLoading, setIsLoading] = useState(true)
-  const [error, setError] = useState<Error | null>(null)
+  const [pokemon, setPokemon] = useState<Pokemon[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState<Error | null>(null);
 
   useEffect(() => {
     const fetchPokemon = async () => {
       try {
-        setIsLoading(true)
+        setIsLoading(true);
         // Buscar os primeiros 150 Pokémon
-        const response = await fetch("https://pokeapi.co/api/v2/pokemon?limit=150")
+        const response = await fetch(
+          "https://pokeapi.co/api/v2/pokemon?limit=386"
+        );
         if (!response.ok) {
-          throw new Error("Falha ao buscar lista de Pokémon")
+          throw new Error("Falha ao buscar lista de Pokémon");
         }
 
-        const data = await response.json()
+        const data = await response.json();
 
         // Buscar detalhes para cada Pokémon
         const pokemonDetails = await Promise.all(
           data.results.map(async (pokemon: { url: string }) => {
-            const detailResponse = await fetch(pokemon.url)
+            const detailResponse = await fetch(pokemon.url);
             if (!detailResponse.ok) {
-              throw new Error(`Falha ao buscar detalhes para ${pokemon.url}`)
+              throw new Error(`Falha ao buscar detalhes para ${pokemon.url}`);
             }
-            return detailResponse.json()
-          }),
-        )
+            return detailResponse.json();
+          })
+        );
 
-        setPokemon(pokemonDetails)
+        setPokemon(pokemonDetails);
       } catch (err) {
-        setError(err instanceof Error ? err : new Error("Ocorreu um erro desconhecido"))
+        setError(
+          err instanceof Error ? err : new Error("Ocorreu um erro desconhecido")
+        );
       } finally {
-        setIsLoading(false)
+        setIsLoading(false);
       }
-    }
+    };
 
-    fetchPokemon()
-  }, [])
+    fetchPokemon();
+  }, []);
 
-  return { pokemon, isLoading, error }
+  return { pokemon, isLoading, error };
 }

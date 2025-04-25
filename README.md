@@ -48,7 +48,7 @@ npm install
 yarn
 ```
 
-3. Crie os arquivos de variáveis de ambiente:
+3. Criando os arquivos de variáveis de ambiente:
 
 Crie dois arquivos `.env.development` e `.env.production` na raiz do projeto, com base no exemplo abaixo:
 
@@ -58,17 +58,19 @@ NEXT_PUBLIC_API_URL=http://localhost:3001/api
 NEXT_PUBLIC_ENABLE_TRADING=true
 ```
 
-> ⚠️ Configure as variáveis ambientes corretamente com os endpoints dos outros projetos das outras equipes
-
-4. Execute o projeto em modo de desenvolvimento:
+4. Executando em DEV:
 
 ```bash
+cd /src/
 npm run dev
+
 # ou
+
+cd /src/
 yarn dev
 ```
 
-5. Acesse no navegador:
+5. Acessando no navegador:
 
 ```
 http://localhost:3000
@@ -83,7 +85,6 @@ http://localhost:3000
 - `start`: Inicia o servidor com o build de produção.
 - `lint`: Executa o linter para verificar erros de código.
 - `format`: Formata os arquivos com Prettier.
-- `test`: Executa a suíte de testes.
 
 ---
 
@@ -122,7 +123,7 @@ pokeadmin/
 
 ---
 
-## 👨‍💻 Autor
+## 👨‍💻 Autores
 
 **João Gabriel Betela da Costa**
 193 | GES
@@ -132,11 +133,5 @@ pokeadmin/
 
 **Vitor Torres Gonzaga**
 517 | GES
-
----
-
-## 📜 Licença
-
-Este projeto está sob a licença MIT. Veja o arquivo `LICENSE` para mais detalhes.
 
 ---

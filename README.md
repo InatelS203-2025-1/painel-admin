@@ -116,6 +116,7 @@ pokeadmin/
 
 - Clean Architecture: Separação clara de responsabilidades.
 - S.O.L.I.D: Princípios de design aplicados à estrutura dos componentes e lógica de negócio.
+- SPA - Single Page Application: Aplicação de página única para uma experiência de usuário fluida e dinâmica.
 - Validação de tipos e dados com `zod`.
 - State Management com `zustand`, centralizado e modular.
 - Componentização com reusabilidade e acessibilidade.

@@ -15,6 +15,77 @@ import { useUserCardStore } from "@/lib/store";
 import { useToast } from "@/components/ui/use-toast";
 import { PokemonStats } from "@/components/pokemon-stats";
 
+// Lista de IDs de Pokémon lendários como números
+const legendaryIds = [
+  144, // Articuno
+  145, // Zapdos
+  146, // Moltres
+  150, // Mewtwo
+  151, // Mew
+  243, // Raikou
+  244, // Entei
+  245, // Suicune
+  249, // Lugia
+  250, // Ho-oh
+  377, // Regirock
+  378, // Regice
+  379, // Registeel
+  380, // Latias
+  381, // Latios
+  382, // Kyogre
+  383, // Groudon
+  384, // Rayquaza
+  // ...adicione outros se quiser
+];
+
+function isLegendary(pokemon: any) {
+  return legendaryIds.includes(Number(pokemon.id));
+}
+
+const cardLendarioStyles = `
+@keyframes shine {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+@keyframes float {
+  0% { transform: translateY(0) scale(1); opacity: 1; }
+  50% { transform: translateY(-20px) scale(1.2); opacity: 0.7; }
+  100% { transform: translateY(0) scale(1); opacity: 1; }
+}
+`;
+if (
+  typeof window !== "undefined" &&
+  !document.getElementById("card-lendario-animations")
+) {
+  const style = document.createElement("style");
+  style.id = "card-lendario-animations";
+  style.innerHTML = cardLendarioStyles;
+  document.head.appendChild(style);
+}
+
+function CardLendario(props: any) {
+  return (
+    <Card
+      {...props}
+      className={
+        "relative overflow-hidden border-4 border-yellow-600 bg-gradient-to-br from-yellow-200 via-yellow-400 to-yellow-900 shadow-2xl ring-4 ring-yellow-400 " +
+        (props.className || "")
+      }
+    >
+      <div className="absolute left-2 top-2 z-20 flex items-center gap-1 rounded bg-gradient-to-r from-yellow-700 to-yellow-400 px-3 py-1 text-xs font-extrabold text-white shadow-lg drop-shadow-lg animate-pulse">
+        <svg
+          className="h-5 w-5 text-white animate-spin-slow"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+        >
+          <path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.561-.955L10 0l2.951 5.955 6.561.955-4.756 4.635 1.122 6.545z" />
+        </svg>
+      </div>
+      {props.children}
+    </Card>
+  );
+}
+
 export function UserCollection() {
   const {
     cards,
@@ -147,119 +218,122 @@ export function UserCollection() {
     favorite: boolean,
     showTypeLabel = false,
     typeName?: string
-  ) => (
-    <Card
-      key={cardId}
-      className="overflow-hidden transition-all hover:shadow-md"
-    >
-      <CardHeader className="relative p-0">
-        <div className="relative h-40 w-full bg-gradient-to-br from-blue-100 to-blue-50">
-          <Image
-            src={
-              pokemon.sprites.other["official-artwork"].front_default ||
-              "/placeholder.svg?height=160&width=160"
-            }
-            alt={pokemon.name}
-            fill
-            className="object-contain p-2"
-          />
-        </div>
-        <div className="absolute right-2 top-2 flex gap-1">
-          {pokemon.types.map((type: any) => (
-            <span
-              key={type.type.name}
-              className={`rounded-full px-2 py-1 text-xs font-medium text-white ${getTypeColor(
-                type.type.name
-              )}`}
-            >
-              {translateType(type.type.name)}
-            </span>
-          ))}
-        </div>
-        {showTypeLabel && typeName && (
-          <div className="absolute left-2 top-2">
-            <span
-              className={`rounded-full px-2 py-1 text-xs font-medium text-white ${getTypeColor(
-                typeName
-              )}`}
-            >
-              {translateType(typeName)}
-            </span>
+  ) => {
+    const CardComponent = isLegendary(pokemon) ? CardLendario : Card;
+    return (
+      <CardComponent
+        key={cardId}
+        className="overflow-hidden transition-all hover:shadow-md"
+      >
+        <CardHeader className="relative p-0">
+          <div className="relative h-40 w-full bg-gradient-to-br from-blue-100 to-blue-50">
+            <Image
+              src={
+                pokemon.sprites.other["official-artwork"].front_default ||
+                "/placeholder.svg?height=160&width=160"
+              }
+              alt={pokemon.name}
+              fill
+              className="object-contain p-2"
+            />
           </div>
-        )}
-      </CardHeader>
-      <CardContent className="p-4">
-        <div className="flex items-center justify-between">
-          <div>
-            <h3 className="text-lg font-bold capitalize text-blue-900">
-              {pokemon.name}
-            </h3>
-            <p className="text-sm text-blue-700">
-              #{pokemon.id.toString().padStart(3, "0")}
-            </p>
+          <div className="absolute right-2 top-2 flex gap-1">
+            {pokemon.types.map((type: any) => (
+              <span
+                key={type.type.name}
+                className={`rounded-full px-2 py-1 text-xs font-medium text-white ${getTypeColor(
+                  type.type.name
+                )}`}
+              >
+                {translateType(type.type.name)}
+              </span>
+            ))}
           </div>
-          <div className="flex items-center gap-2 rounded-full bg-blue-100 px-3 py-1">
+          {showTypeLabel && typeName && (
+            <div className="absolute left-2 top-2">
+              <span
+                className={`rounded-full px-2 py-1 text-xs font-medium text-white ${getTypeColor(
+                  typeName
+                )}`}
+              >
+                {translateType(typeName)}
+              </span>
+            </div>
+          )}
+        </CardHeader>
+        <CardContent className="p-4">
+          <div className="flex items-center justify-between">
+            <div>
+              <h3 className="text-lg font-bold capitalize text-blue-900">
+                {pokemon.name}
+              </h3>
+              <p className="text-sm text-blue-700">
+                #{pokemon.id.toString().padStart(3, "0")}
+              </p>
+            </div>
+            <div className="flex items-center gap-2 rounded-full bg-blue-100 px-3 py-1">
+              <Button
+                variant="ghost"
+                size="icon"
+                className="h-6 w-6 rounded-full p-0 text-blue-700 hover:bg-blue-200"
+                onClick={() => decrementQuantity(cardId)}
+                disabled={quantity <= 1}
+              >
+                <Minus className="h-3 w-3" />
+              </Button>
+              <span className="text-sm font-medium text-blue-800">
+                {quantity}
+              </span>
+              <Button
+                variant="ghost"
+                size="icon"
+                className="h-6 w-6 rounded-full p-0 text-blue-700 hover:bg-blue-200"
+                onClick={() => incrementQuantity(cardId)}
+              >
+                <Plus className="h-3 w-3" />
+              </Button>
+            </div>
+          </div>
+        </CardContent>
+        <CardFooter className="flex justify-between border-t bg-blue-50 p-2">
+          <Button
+            variant="ghost"
+            size="sm"
+            onClick={() => setSelectedPokemon(pokemon.id)}
+            className="text-blue-600 hover:bg-blue-100"
+          >
+            Ver Stats
+          </Button>
+          <div className="flex gap-1">
             <Button
               variant="ghost"
               size="icon"
-              className="h-6 w-6 rounded-full p-0 text-blue-700 hover:bg-blue-200"
-              onClick={() => decrementQuantity(cardId)}
-              disabled={quantity <= 1}
+              onClick={() => handleToggleFavorite(cardId, favorite)}
+              className={
+                favorite
+                  ? "text-red-500 hover:bg-red-100"
+                  : "text-gray-400 hover:bg-blue-100"
+              }
             >
-              <Minus className="h-3 w-3" />
+              {favorite ? (
+                <Heart className="h-4 w-4 fill-current" />
+              ) : (
+                <HeartOff className="h-4 w-4" />
+              )}
             </Button>
-            <span className="text-sm font-medium text-blue-800">
-              {quantity}
-            </span>
             <Button
               variant="ghost"
               size="icon"
-              className="h-6 w-6 rounded-full p-0 text-blue-700 hover:bg-blue-200"
-              onClick={() => incrementQuantity(cardId)}
+              onClick={() => handleRemoveCard(cardId, pokemon.name)}
+              className="text-red-600 hover:bg-red-100"
             >
-              <Plus className="h-3 w-3" />
+              <Trash className="h-4 w-4" />
             </Button>
           </div>
-        </div>
-      </CardContent>
-      <CardFooter className="flex justify-between border-t bg-blue-50 p-2">
-        <Button
-          variant="ghost"
-          size="sm"
-          onClick={() => setSelectedPokemon(pokemon.id)}
-          className="text-blue-600 hover:bg-blue-100"
-        >
-          Ver Stats
-        </Button>
-        <div className="flex gap-1">
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={() => handleToggleFavorite(cardId, favorite)}
-            className={
-              favorite
-                ? "text-red-500 hover:bg-red-100"
-                : "text-gray-400 hover:bg-blue-100"
-            }
-          >
-            {favorite ? (
-              <Heart className="h-4 w-4 fill-current" />
-            ) : (
-              <HeartOff className="h-4 w-4" />
-            )}
-          </Button>
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={() => handleRemoveCard(cardId, pokemon.name)}
-            className="text-red-600 hover:bg-red-100"
-          >
-            <Trash className="h-4 w-4" />
-          </Button>
-        </div>
-      </CardFooter>
-    </Card>
-  );
+        </CardFooter>
+      </CardComponent>
+    );
+  };
 
   return (
     <div className="space-y-6">

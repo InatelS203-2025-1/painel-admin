@@ -125,6 +125,28 @@ pokeadmin/
 
 ---
 
+## 🧩 Design Patterns Utilizados
+
+O projeto aplica diversos padrões de projeto (Design Patterns) para garantir organização, escalabilidade e manutenibilidade do código:
+
+### Factory Method
+
+Permite criar componentes diferentes de acordo com regras de negócio. Exemplo: cards de Pokémon lendários são renderizados com um componente especial (`CardLendario`), enquanto os demais usam o card padrão.
+
+### Observer
+
+Permite que componentes reajam automaticamente a mudanças de estado. Exemplo: o sistema de notificações (toasts) e a atualização automática da coleção de cartas usam Observer para notificar componentes sobre mudanças.
+
+### Composite
+
+Permite compor interfaces complexas a partir de componentes menores e reutilizáveis. Exemplo: os cards de Pokémon são compostos por header, imagem, selo, botões, etc. Menus, listas e abas também seguem esse padrão.
+
+### Strategy
+
+Permite alternar entre diferentes algoritmos de filtragem e ordenação. Exemplo: filtros de cartas por tipo, favoritos, etc., podem ser implementados como estratégias diferentes.
+
+---
+
 ## 👨‍💻 Autores
 
 **João Gabriel Betela da Costa**

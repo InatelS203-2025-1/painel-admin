@@ -13,6 +13,7 @@
 Painel administrativo para gerenciamento de coleções de cartas Pokémon, desenvolvido com tecnologias modernas para oferecer uma experiência fluida e responsiva.
 
 ### Funcionalidades Principais
+
 - Estatísticas e métricas das APIS utilizadas
 - Dashboard possui dados de:
   - Jogadores

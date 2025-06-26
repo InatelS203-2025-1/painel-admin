@@ -113,7 +113,7 @@ export default function DashboardLayout({
               </SidebarMenuItem> */}
               <SidebarMenuItem>
                 <SidebarMenuButton asChild>
-                  <a href="/dashboard/marketplace">
+                  <a href="/dashboard/trades">
                     <RefreshCcw className="h-5 w-5" />
                     <span>Trocas</span>
                   </a>

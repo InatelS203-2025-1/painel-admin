@@ -206,13 +206,6 @@ export function PokemonList({
                     </span>
                   ))}
                 </div>
-                {isPokemonInCollection(pokemon.id) && (
-                  <div className="absolute left-2 bottom-2">
-                    <span className="flex h-6 w-6 items-center justify-center rounded-full bg-blue-600 text-white">
-                      <Heart className="h-3 w-3 fill-current" />
-                    </span>
-                  </div>
-                )}
               </CardHeader>
               <CardContent className="p-4">
                 <h3 className="text-lg font-bold text-blue-900">
@@ -233,7 +226,7 @@ export function PokemonList({
                   Ver Stats
                 </Button>
                 <div className="flex gap-1">
-                  <Button
+                  {/* <Button
                     variant="ghost"
                     size="icon"
                     onClick={() => handleAddToCollection(pokemon)}
@@ -250,7 +243,7 @@ export function PokemonList({
                     title="editar stats"
                   >
                     <Edit className="h-4 w-4" />
-                  </Button>
+                  </Button> */}
                 </div>
               </CardFooter>
             </CardComponent>

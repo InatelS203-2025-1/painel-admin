@@ -18,6 +18,8 @@ import {
 import { Skeleton } from "@/components/ui/skeleton";
 import { useUserCardStore } from "@/lib/store";
 import type { Pokemon } from "@/types/pokemon";
+import { fixedTrainers } from "@/app/dashboard/trainers/page";
+import { openTrades, completedTrades } from "@/app/dashboard/trades/page";
 
 interface DashboardCardsProps {
   pokemon: Pokemon[];
@@ -113,6 +115,16 @@ export function DashboardCards({ pokemon, isLoading }: DashboardCardsProps) {
     };
   }, [collection, getCardCount, getTotalUniqueCards, getCardsByType]);
 
+  // Número de treinadores fixos
+  const totalTrainers = fixedTrainers.length;
+  // Número de treinadores online (aleatório entre 10 e 30)
+  const onlineTrainers = useMemo(() => Math.floor(Math.random() * 21) + 10, []);
+  // Número de cartas na coleção do usuário
+  const totalCards = userStats.totalCards;
+  // Número de trocas em aberto
+  const openTradesCount = openTrades.length;
+  const totalTrades = openTrades.length + completedTrades.length;
+
   if (isLoading) {
     return (
       <div className="grid w-full grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
@@ -191,51 +203,59 @@ export function DashboardCards({ pokemon, isLoading }: DashboardCardsProps) {
         <CardHeader className="pb-2">
           <CardDescription>Treinadores Totais</CardDescription>
           <CardTitle className="text-2xl">
-            {userStats.totalCards} Treinadores
+            {totalTrainers} Treinadores
           </CardTitle>
         </CardHeader>
         <CardContent>
           <div className="flex flex-col items-center">
             <Users className="mt-3 mb-3 h-12 w-12 text-blue-400" />
             <div className="text-center">
-              <p className="text-sm text-blue-600">Treinadores Online:</p>
-              <p className="text-xl font-bold text-blue-700">0</p>
+              <div className="text-blue-700 mt-2 font-semibold">
+                Treinadores Online:
+              </div>
+              <div className="text-sm text-green-700 mt-1">
+                {onlineTrainers} online
+              </div>
             </div>
           </div>
         </CardContent>
       </Card>
 
-      <Card className="w-full border-blue-200 shadow-md">
+      {/* <Card className="w-full border-blue-200 shadow-md">
         <CardHeader className="pb-2">
-          <CardDescription>Cartas Totais</CardDescription>
-          <CardTitle className="text-2xl">
-            {stats.totalPokemon} Cartas
-          </CardTitle>
+          <CardDescription>Cartas Registradas</CardDescription>
+          <CardTitle className="text-2xl">386 Cartas Disponíveis</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="flex flex-col items-center">
-            <Cards className="mb-3 h-12 w-12 text-blue-400" />
+            <Cards className="mt-3 mb-3 h-12 w-12 text-blue-400" />
             <div className="text-center">
-              <p className="text-sm text-blue-600">Cartas Registradas:</p>
-              <p className="text-xl font-bold text-blue-700">0</p>
+              <div className="text-blue-700 mt-2 font-semibold">
+                Cartas na coleção:
+              </div>
+              <div className="text-2xl text-blue-600 font-bold">
+                {totalCards}
+              </div>
             </div>
           </div>
         </CardContent>
-      </Card>
+      </Card> */}
 
       <Card className="w-full border-blue-200 shadow-md">
         <CardHeader className="pb-2">
-          <CardDescription>Trocas</CardDescription>
-          <CardTitle className="text-2xl capitalize">0 Trocas</CardTitle>
+          <CardDescription>Trocas em Aberto</CardDescription>
+          <CardTitle className="text-2xl">{totalTrades} Trocas</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="flex flex-col items-center">
-            <RefreshCcw className="mt-4 mb-3 h-12 w-12 text-blue-400" />
+            <RefreshCcw className="mt-3 mb-3 h-12 w-12 text-blue-400" />
             <div className="text-center">
-              <p className="text-sm text-blue-600">Trocas Em Aberto:</p>
-              <p className="text-xl font-bold text-blue-700">0</p>
-              <div className="mt-1 flex justify-center gap-1"></div>
-              <p className="mt-1 text-xs text-blue-500"></p>
+              <div className="text-blue-700 mt-2 font-semibold">
+                Trocas em Aberto:
+              </div>
+              <div className="text-2xl text-blue-600 font-bold">
+                {openTradesCount}
+              </div>
             </div>
           </div>
         </CardContent>
